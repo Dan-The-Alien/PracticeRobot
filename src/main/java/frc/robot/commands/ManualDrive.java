@@ -24,12 +24,11 @@ public class ManualDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double driveStick =  Robot.oi.getDriverRawAxis(RobotMap.D_LEFT_Y);
-    double turnStick = Robot.oi.getDriverRawAxis(RobotMap.D_RIGHT_X);
+    double leftStick =  Robot.oi.getDriverRawAxis(RobotMap.D_LEFT_Y);
+    double rightStick = Robot.oi.getDriverRawAxis(RobotMap.D_RIGHT_X);
 
-    Robot.driveTrain.setLeftMotor(driveStick - (0.5 * turnStick - 0.5));
-    Robot.driveTrain.setRightMotor(driveStick + (0.5 * turnStick - 0.5));
-
+    Robot.driveTrain.setLeftMotors(leftStick);
+    Robot.driveTrain.setRightMotors(rightStick);
 
   }
   // Make this return true when this Command no longer needs to run execute()
@@ -41,8 +40,8 @@ public class ManualDrive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.driveTrain.setLeftMotor(0);
-    Robot.driveTrain.setRightMotor(0);
+    Robot.driveTrain.setLeftMotors(0);
+    Robot.driveTrain.setRightMotors(0);
   }
 
   // Called when another command which requires one or more of the same
