@@ -23,37 +23,37 @@ public class RobotMap {
   // number and the module. For example you with a rangefinder:
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
-  public static int DRIVER_CONTROLLER = 0;
+  public static int kDriverController = 0;
 
-  public static int MOTOR_LEFT_FRONT = 0;
-  public static int MOTOR_LEFT_BACK = 1;
-  public static int MOTOR_RIGHT_FRONT = 2;
-  public static int MOTOR_RIGHT_BACK = 3;
+  public static int kMotorLeftFront = 0;
+  public static int kMotorLeftBack = 1;
+  public static int kMotorRightFront = 2;
+  public static int kMotorRightBack = 3;
   
-  public static int D_LEFT_X = 0;
-  public static int D_LEFT_Y = 1;
-  public static int D_RIGHT_X = 4;
-  public static int D_RIGHT_Y = 5;
+  public static int kDLeftX = 0;
+  public static int kDLeftY = 1;
+  public static int kDRightX = 4;
+  public static int kDRightY = 5;
 
-  public static int D_TRIGGER_LEFT = 2;
-  public static int D_TRIGGER_RIGHT = 3;
+  public static int kDTriggerLeft = 2;
+  public static int kDTriggerRight = 3;
 
-  public static int D_BUTTON_LEFT = 4;
-  public static int D_BUTTON_RIGHT = 5;
-  public static int D_BUTTON_A = 0;
-  public static int D_BUTTON_B = 1;
-  public static int D_BUTTON_X = 2;
-  public static int D_BUTTON_Y = 3;
-  public static int D_BUTTON_BACK = 6;
-  public static int D_BUTTON_MENU = 7;
-  public static int D_BUTTON_STICK_LEFT = 8;
-  public static int D_BUTTON_STICK_RIGHT = 9;
+  public static int kDButtonLeft = 4;
+  public static int kDButtonRight = 5;
+  public static int kDButtonA = 0;
+  public static int kDButtonB = 1;
+  public static int kDButtonX = 2;
+  public static int kDButtonY = 3;
+  public static int kDButtonBack = 6;
+  public static int kDButtonMenu = 7;
+  public static int kDButtonStickLeft = 8;
+  public static int kDButtonStickRight = 9;
 
-  public static int D_DPAD_UP = 0;
-  public static int D_DPAD_RIGHT = 90;
-  public static int D_DPAD_DOWN = 180;
-  public static int D_DPAD_LEFT = 270;
+  public static int kDDpadUp = 0;
+  public static int kDDpadRight = 90;
+  public static int kDDpadDown = 180;
+  public static int kDDpadLeft = 270;
 
 
-  public static int TIRE_DIAMETER = 6; //inches 
+  public static int kTireDiameter = 6; //inches 
 }

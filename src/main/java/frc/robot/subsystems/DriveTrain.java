@@ -20,10 +20,10 @@ import frc.robot.commands.ManualDrive;
 public class DriveTrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  private VictorSPX motor_left_back = new VictorSPX(RobotMap.MOTOR_LEFT_BACK);
-  private VictorSPX motor_left_front = new VictorSPX(RobotMap.MOTOR_LEFT_FRONT);
-  private VictorSPX motor_right_back = new VictorSPX(RobotMap.MOTOR_RIGHT_BACK);
-  private VictorSPX motor_right_front = new VictorSPX(RobotMap.MOTOR_RIGHT_FRONT);
+  private VictorSPX motor_left_back = new VictorSPX(RobotMap.kMotorLeftBack);
+  private VictorSPX motor_left_front = new VictorSPX(RobotMap.kMotorLeftFront);
+  private VictorSPX motor_right_back = new VictorSPX(RobotMap.kMotorRightBack);
+  private VictorSPX motor_right_front = new VictorSPX(RobotMap.kMotorRightFront);
 
   public void setLeftMotors(double speed) {
     motor_left_back.set(ControlMode.PercentOutput, speed);

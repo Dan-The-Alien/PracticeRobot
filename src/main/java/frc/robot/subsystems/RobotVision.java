@@ -23,7 +23,7 @@ public class RobotVision extends Subsystem {
   //The rPi vision co-processor returns Network Table vaules ranging from 0 to 1 (I think) for the values 
   //of the detected object's x position, y position, and area. I need a program here that can interpret those 
   //values to determine the object's distance and location relative to the robot, in inches
-  //(or other real-world unit).
+  //(or other real-world unit). If you want, you can also program
 
   @Override
   public void initDefaultCommand() {

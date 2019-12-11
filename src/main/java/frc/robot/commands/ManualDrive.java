@@ -24,8 +24,8 @@ public class ManualDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double leftStick =  Robot.oi.getDriverRawAxis(RobotMap.D_LEFT_Y);
-    double rightStick = Robot.oi.getDriverRawAxis(RobotMap.D_RIGHT_X);
+    double leftStick =  Robot.oi.getDriverRawAxis(RobotMap.kDLeftY);
+    double rightStick = Robot.oi.getDriverRawAxis(RobotMap.kDRightY);
 
     Robot.driveTrain.setLeftMotors(leftStick);
     Robot.driveTrain.setRightMotors(rightStick);
