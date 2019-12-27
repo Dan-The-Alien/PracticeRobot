@@ -7,8 +7,11 @@
 
 package frc.robot.commands;
 
+import java.util.logging.Level;
+
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotLogger;
 import frc.robot.RobotMap;
 
 public class ManualDrive extends Command {
@@ -19,6 +22,7 @@ public class ManualDrive extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    RobotLogger.logger.log(Level.INFO, "ManualDrive command initialized");
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -30,6 +34,7 @@ public class ManualDrive extends Command {
     Robot.driveTrain.setLeftMotors(leftStick);
     Robot.driveTrain.setRightMotors(rightStick);
 
+    
   }
   // Make this return true when this Command no longer needs to run execute()
   @Override
@@ -49,5 +54,6 @@ public class ManualDrive extends Command {
   @Override
   protected void interrupted() {
     this.end();
+    RobotLogger.logger.log(Level.INFO, "Command ManualDrive interrupted");
   }
 }

@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import java.util.logging.Level;
+
 import edu.wpi.first.wpilibj.XboxController;
 
 /**
@@ -18,7 +20,9 @@ public class OI {
   public XboxController driverController = new XboxController(RobotMap.DRIVER_CONTROLLER);
 
   public double getDriverRawAxis(int axis) {
-    return this.driverController.getRawAxis(axis);
+    double value = this.driverController.getRawAxis(axis);
+    RobotLogger.logger.log(Level.FINER, "DriverController axis " + axis + " sensed at " + value);
+    return value;
   }
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a

@@ -7,6 +7,9 @@
 
 package frc.robot;
 
+import java.io.IOException;
+import java.util.logging.Level;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -28,14 +31,23 @@ public class Robot extends TimedRobot {
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   /**
-   * This function is run when the robot is first started up and should be
-   * used for any initialization code.
+   * This function is run when the robot is first started up and should be used
+   * for any initialization code.
    */
   @Override
   public void robotInit() {
     oi = new OI();
     driveTrain = new DriveTrain();
+
+    try {
+      RobotLogger.setup();
+    } catch (IOException e) {
+      e.printStackTrace();
+      throw new RuntimeException("Logger failed to initialize.");
+    }
+    RobotLogger.logger.log(Level.INFO, "Robot initialized succesfully");
   }
+
   /**
    * This function is called every robot packet, no matter the mode. Use
    * this for items like diagnostics that you want ran during disabled,
@@ -55,6 +67,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void disabledInit() {
+    RobotLogger.logger.log(Level.INFO, "Disabled mode initialized");
+    
   }
 
   @Override
@@ -77,6 +91,7 @@ public class Robot extends TimedRobot {
   public void autonomousInit() {
     m_autonomousCommand = m_chooser.getSelected();
 
+    RobotLogger.logger.log(Level.INFO, "Autonomous mode initialized");
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector",
      * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
@@ -100,6 +115,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
+    RobotLogger.logger.log(Level.INFO, "Teleop mode initialized");
     // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
