@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -23,7 +24,11 @@ public class RobotLogger {
     public static void setup() throws IOException {
         logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
-        fileTxt = new FileHandler("Log.txt");
+        if (new File("/home/lvuser/logs/log99.txt").exists() !=true)
+            fileTxt = new FileHandler("Log.txt");
+        else 
+            throw new IOException("Max number of log files reached");
+
         formatterTxt = new SimpleFormatter();
         fileTxt.setFormatter(formatterTxt);
         logger.addHandler(fileTxt);

@@ -43,7 +43,7 @@ public class DriveTrain extends Subsystem {
   public double getRobotSpeed(double motorPower1, double motorPower2) {
     double averageMotorPower = (motorPower1 + motorPower2) / 2;
     double rpm = averageMotorPower * RobotMap.MAX_WHEEL_RPM;
-    double speed = rpm/60 * (RobotMap.TIRE_DIAMETER * Math.PI);
+    double speed = rpm/60 * (RobotMap.kTireDiameter * Math.PI);
     return speed;
   }
 

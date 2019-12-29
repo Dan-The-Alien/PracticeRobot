@@ -1,0 +1,6 @@
+Dec 27, 2019 1:06:29 PM frc.robot.Robot robotInit
+INFO: Robot initialized succesfully
+Dec 27, 2019 1:06:29 PM frc.robot.Robot disabledInit
+INFO: Disabled mode initialized
+Dec 27, 2019 1:06:29 PM frc.robot.subsystems.DriveTrain initDefaultCommand
+INFO: Drivetrain default command set to ManualDrive
