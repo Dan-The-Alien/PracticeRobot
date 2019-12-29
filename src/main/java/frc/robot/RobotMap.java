@@ -19,7 +19,9 @@ public class RobotMap {
   // public static int leftMotor = 1;
   // public static int rightMotor = 2;
 
-public static final double MAX_WHEEL_RPM = 465;
+public static final boolean kSquareInputs = true;
+
+public static final double kPHeading = 1;
 
 // If you are using multiple modules, make sure to define both the port
   // number and the module. For example you with a rangefinder:

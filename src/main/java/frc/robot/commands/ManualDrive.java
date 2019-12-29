@@ -28,12 +28,14 @@ public class ManualDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double leftStick =  Robot.oi.getDriverRawAxis(RobotMap.kDLeftY);
-    double rightStick = Robot.oi.getDriverRawAxis(RobotMap.kDRightY);
+    double speed = Robot.oi.getDriverRawAxis(RobotMap.kDLeftY);
+    double rotation = Robot.oi.getDriverRawAxis(RobotMap.kDRightX);
+    double errorFromStraight = -Robot.driveTrain.gyro.getRate();
 
-    Robot.driveTrain.setLeftMotors(leftStick);
-    Robot.driveTrain.setRightMotors(rightStick);
+    // Robot.driveTrain.setLeftMotors(leftStick);
+    // Robot.driveTrain.setRightMotors(rightStick);
 
+    Robot.driveTrain.drive(speed, rotation, errorFromStraight, RobotMap.kSquareInputs);
     
   }
   // Make this return true when this Command no longer needs to run execute()

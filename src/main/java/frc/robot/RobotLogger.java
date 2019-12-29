@@ -9,14 +9,21 @@ package frc.robot;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 /**
  * Add your docs here.
  */
+
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 public class RobotLogger {
 
     public static Logger logger;
+    private static ShuffleboardTab debugginTab = Shuffleboard.getTab("Debugging");
+    public static NetworkTableEntry logLevel = debugginTab.add("Debug Level", 1).getEntry();
     private static FileHandler fileTxt;
     private static SimpleFormatter formatterTxt;
 
@@ -27,5 +34,6 @@ public class RobotLogger {
         formatterTxt = new SimpleFormatter();
         fileTxt.setFormatter(formatterTxt);
         logger.addHandler(fileTxt);
+        logger.setLevel(Level.INFO);
     }
 }

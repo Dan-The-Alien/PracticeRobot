@@ -12,9 +12,12 @@ package frc.robot;
 import java.io.IOException;
 import java.util.logging.Level;
 
+import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.subsystems.DriveTrain;
 
@@ -41,6 +44,10 @@ public class Robot extends TimedRobot {
     oi = new OI();
     driveTrain = new DriveTrain();
 
+    ShuffleboardTab stDefault = Shuffleboard.getTab("Default");
+
+    Shuffleboard.getTab("Default").add((Sendable) Robot.driveTrain.gyro);
+    
     try {
       RobotLogger.setup();
     } catch (IOException e) {
