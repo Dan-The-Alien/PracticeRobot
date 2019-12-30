@@ -25,25 +25,33 @@ import edu.wpi.first.wpilibj.SPI;
 public class DriveTrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+
+  /*Create drivetrain motors. Only accessible from this class, to access
+  from other classes, use setLeftMotors(); or setRightMotors(); */
   private VictorSPX motor_left_back = new VictorSPX(RobotMap.kMotorLeftBack);
   private VictorSPX motor_left_front = new VictorSPX(RobotMap.kMotorLeftFront);
   private VictorSPX motor_right_back = new VictorSPX(RobotMap.kMotorRightBack);
   private VictorSPX motor_right_front = new VictorSPX(RobotMap.kMotorRightFront);
 
-  public Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
+  //Creates Gyroscope, designed for KOP gyro (Analog Devices ADXRS450)
+  // public Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
 
+  //Set left motor speed. Accepts value from -1 to 1
   public void setLeftMotors(double speed) {
     motor_left_back.set(ControlMode.PercentOutput, speed);
     motor_left_front.set(ControlMode.PercentOutput, speed);
     RobotLogger.logger.log(Level.FINEST, "Left motor speed set to " + speed);
   }
 
+  //Set right motor speed. Accepts value from -1 to 1
   public void setRightMotors(double speed) {
     motor_right_back.set(ControlMode.PercentOutput, -speed);
     motor_right_front.set(ControlMode.PercentOutput, -speed);
-    RobotLogger.logger.log(Level.FINEST, "Left motor speed set to " + -speed);
+    RobotLogger.logger.log(Level.FINEST, "Right motor speed set to " + -speed);
   }
 
+
+  //Arcade Drive. Copied from DifferentialDrive.java, ajusted to work for VictorSPX
   public void drive(double xSpeed, double zRotation, double error, boolean squareInputs) {
    
     // Square the inputs (while preserving the sign) to increase fine control

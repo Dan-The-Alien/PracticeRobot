@@ -30,7 +30,8 @@ public class ManualDrive extends Command {
   protected void execute() {
     double speed = Robot.oi.getDriverRawAxis(RobotMap.kDLeftY);
     double rotation = Robot.oi.getDriverRawAxis(RobotMap.kDRightX);
-    double errorFromStraight = -Robot.driveTrain.gyro.getRate();
+    // double errorFromStraight = -Robot.driveTrain.gyro.getRate();
+    double errorFromStraight = 0;
 
     // Robot.driveTrain.setLeftMotors(leftStick);
     // Robot.driveTrain.setRightMotors(rightStick);

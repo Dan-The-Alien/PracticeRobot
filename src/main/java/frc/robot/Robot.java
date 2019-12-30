@@ -46,7 +46,7 @@ public class Robot extends TimedRobot {
 
     ShuffleboardTab stDefault = Shuffleboard.getTab("Default");
 
-    Shuffleboard.getTab("Default").add((Sendable) Robot.driveTrain.gyro);
+    // Shuffleboard.getTab("Default").add((Sendable) Robot.driveTrain.gyro);
     
     try {
       RobotLogger.setup();
